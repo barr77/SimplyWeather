@@ -12,6 +12,7 @@
 		CDBF56861BE6D208007ED2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBF56841BE6D208007ED2BC /* Main.storyboard */; };
 		CDBF56881BE6D208007ED2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF56871BE6D208007ED2BC /* Assets.xcassets */; };
 		CDBF568B1BE6D208007ED2BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBF56891BE6D208007ED2BC /* LaunchScreen.storyboard */; };
+		CDBF56961BE6D253007ED2BC /* CurrWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF56951BE6D253007ED2BC /* CurrWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CDBF56871BE6D208007ED2BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDBF568A1BE6D208007ED2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDBF568C1BE6D208007ED2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDBF56951BE6D253007ED2BC /* CurrWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,39 @@
 		CDBF567F1BE6D208007ED2BC /* SimplyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				CDBF56921BE6D218007ED2BC /* Model */,
+				CDBF56931BE6D21E007ED2BC /* View */,
+				CDBF56941BE6D225007ED2BC /* Controller */,
 				CDBF56801BE6D208007ED2BC /* AppDelegate.swift */,
-				CDBF56821BE6D208007ED2BC /* ViewController.swift */,
 				CDBF56841BE6D208007ED2BC /* Main.storyboard */,
 				CDBF56871BE6D208007ED2BC /* Assets.xcassets */,
 				CDBF56891BE6D208007ED2BC /* LaunchScreen.storyboard */,
 				CDBF568C1BE6D208007ED2BC /* Info.plist */,
 			);
 			path = SimplyWeather;
+			sourceTree = "<group>";
+		};
+		CDBF56921BE6D218007ED2BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDBF56951BE6D253007ED2BC /* CurrWeather.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CDBF56931BE6D21E007ED2BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CDBF56941BE6D225007ED2BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDBF56821BE6D208007ED2BC /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +164,7 @@
 			files = (
 				CDBF56831BE6D208007ED2BC /* ViewController.swift in Sources */,
 				CDBF56811BE6D208007ED2BC /* AppDelegate.swift in Sources */,
+				CDBF56961BE6D253007ED2BC /* CurrWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
