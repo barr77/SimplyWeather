@@ -64,6 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     var locationManager:CLLocationManager!
     var initRefreshed:Bool?
     var currWeather: CurrWeather!
+    var dailyWeather: DailyWeather!
     var tempUnit: String!
     var selUnit: String!
     
@@ -99,14 +100,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
         
-//        //=> Check if got internet. If no internet load last info (if available)
-//        if Reachability.isConnectedToNetwork() == false {
-//            errNoInternet()
-//        } else {
-//            //Get user location
-//            getLocation()
-//        }
-//        
+        //=> Check if got internet. If no internet load last info (if available)
+        if Reachability.isConnectedToNetwork() == false {
+            errNoInternet()
+        } else {
+            //Get user location
+            getLocation()
+        }
+        
         
         refreshInfo()
     }
@@ -155,6 +156,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                     //Initiate currWeather object
                     currWeather = CurrWeather(longitude: userLongitude!, latitude: userLatitude!, units: selUnit)
                     getWeatherInfo()
+                    
+                    //Then initiate daily weather object
+                    dailyWeather = DailyWeather(longitude: userLongitude!, latitude: userLatitude!, units: selUnit)
+                    getDailyInfo()
+                    
                 }
             }
             initRefreshed = true
@@ -209,6 +215,52 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     
+    func getDailyInfo() {
+        if let gotDailyWeather = dailyWeather {
+            
+            toggleRefreshAnimation(true)
+            
+            gotDailyWeather.getDailyDetails { () -> () in
+                
+//                var temperatureUnit: String!
+//                var windUnit: String!
+//                
+//                if self.selUnit == UNIT_METRIC {
+//                    temperatureUnit = UNIT_C
+//                    windUnit = UNIT_WIND_METRIC
+//                } else {
+//                    temperatureUnit = UNIT_F
+//                    windUnit = UNIT_WIND_IMPERIAL
+//                }
+                
+//                print("\(self.dailyWeather.weatherDetails[0].humidity)")
+                
+//                self.forecastImg.image = UIImage(named: "\(self.currWeather.weatherIcon)")
+//                self.forecastImg.image = self.forecastImg.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+//                self.forecastImg.tintColor = UIColor.whiteColor()
+//                
+//                
+//                self.forecastLbl.text = self.currWeather.forecast
+//                self.locationLbl.text = self.currWeather.location
+//                self.temperatureLbl.text = self.currWeather.temperature + temperatureUnit
+//                self.pressureLbl.text = self.currWeather.pressure + "hPa"
+//                self.sunriseLbl.text = "↑ " + self.currWeather.sunrise
+//                self.sunsetLbl.text = "↓ " + self.currWeather.sunset
+//                self.maxTempLbl.text = "Max: " + self.currWeather.maxTemp + temperatureUnit
+//                self.minTempLbl.text = "Min:  " + self.currWeather.minTemp + temperatureUnit
+//                self.humidityLbl.text = self.currWeather.humidity + "%"
+//                self.windLbl.text = "Wind: " + self.currWeather.wind + windUnit
+//                
+//                let formatter = NSDateFormatter();
+//                formatter.dateFormat = "EEEE, MMMM dd";
+//                self.dateLbl.text = "\(formatter.stringFromDate(NSDate()))"
+                
+                self.toggleRefreshAnimation(false)
+                
+            }
+        }
+        
+    }
 
 
     @IBAction func switchUnits(sender: AnyObject) {

@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-class CurrWeather {
+class CurrWeather_old {
     
     private var _location: String!
     private var _forecast: String!
@@ -116,10 +116,10 @@ class CurrWeather {
     }
 
     var weatherDailyApiUrl: String {
-        if _weatherApiUrl == nil {
-            _weatherApiUrl = ""
+        if _weatherDailyApiUrl == nil {
+            _weatherDailyApiUrl = ""
         }
-        return _weatherApiUrl
+        return _weatherDailyApiUrl
     }
     
     

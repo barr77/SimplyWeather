@@ -10,74 +10,13 @@ import Foundation
 import Alamofire
 
 
-class CurrentWeather: Weather {
+class CurrWeather: Weather {
     
-//    private var _location: String!
-//    private var _forecast: String!
-//    private var _minTemp: String!
-//    private var _maxTemp: String!
-//    private var _wind: String!
-//    private var _humidity: String!
-//    private var _weatherIcon: String!
     private var _sunrise: String!
     private var _sunset: String!
-//    private var _latitude: Double!
-//    private var _longitude: Double!
     private var _weatherApiUrl: String!
-//    private var _weatherDailyApiUrl: String!
-//    private var _pressure: String!
-//    private var _temperature: String!
-//    private var _units: String!
     
     //GETTERS
-//    var location: String {
-//        if _location == nil {
-//            _location = ""
-//        }
-//        return _location
-//    }
-//    
-//    var forecast: String {
-//        if _forecast == nil {
-//            _forecast = ""
-//        }
-//        return _forecast
-//    }
-//    
-//    var minTemp: String {
-//        if _minTemp == nil {
-//            _minTemp = ""
-//        }
-//        return _minTemp
-//    }
-//    
-//    var maxTemp: String {
-//        if _maxTemp == nil {
-//            _maxTemp = ""
-//        }
-//        return _maxTemp
-//    }
-//    
-//    var wind: String {
-//        if _wind == nil {
-//            _wind = ""
-//        }
-//        return _wind
-//    }
-//    
-//    var humidity: String {
-//        if _humidity == nil {
-//            _humidity = ""
-//        }
-//        return _humidity
-//    }
-//    
-//    var weatherIcon: String {
-//        if _weatherIcon == nil {
-//            _weatherIcon = ""
-//        }
-//        return _weatherIcon
-//    }
     
     var sunrise: String {
         if _sunrise == nil {
@@ -94,20 +33,6 @@ class CurrentWeather: Weather {
     }
     
     
-//    var temperature: String {
-//        if _temperature == nil {
-//            _temperature = ""
-//        }
-//        return _temperature
-//    }
-//    
-//    var pressure: String {
-//        if _pressure == nil {
-//            _pressure = ""
-//        }
-//        return _pressure
-//    }
-    
     var weatherApiUrl: String {
         if _weatherApiUrl == nil {
             _weatherApiUrl = ""
@@ -115,26 +40,17 @@ class CurrentWeather: Weather {
         return _weatherApiUrl
     }
     
-//    var weatherDailyApiUrl: String {
-//        if _weatherApiUrl == nil {
-//            _weatherApiUrl = ""
-//        }
-//        return _weatherApiUrl
-//    }
     
     
     //Initiate weather object by acquiring location & measurement units
     override init(longitude: Double, latitude: Double, units: String) {
 
-//        self._longitude = longitude
-//        self._latitude = latitude
-//        self._units = units
 
         super.init(longitude: longitude, latitude: latitude, units: units)
         
         
         _weatherApiUrl = "\(URL_BASE)lat=\(latitude)&lon=\(longitude)&APPID=\(APIKey)&units=\(units)"
-        //        print(_weatherApiUrl)
+//                print(_weatherApiUrl)
         
 //        _weatherDailyApiUrl = "\(URL_FORECASTBASE)lat=\(_latitude)&lon=\(_longitude)&cnt=8&mode=json&&APPID=\(APIKey)&units=\(_units)"
 //        print(_weatherDailyApiUrl)
@@ -266,21 +182,7 @@ class CurrentWeather: Weather {
                 
                 print("\(error)")
             }
-            
-            //            private var _location: String! X
-            //            private var _forecast: String! X
-            //            private var _minTemp: String! X
-            //            private var _maxTemp: String! X
-            //            private var _wind: String! X
-            //            private var _humidity: String! X
-            //            private var _weatherIcon: String!
-            //            private var _sunrise: String! X
-            //            private var _sunset: String! X
-            //            private var _latitude: Double! X
-            //            private var _longitude: Double! X
-            //            private var _weatherApiUrl: String! X
-            //            private var _units: String! X
-            
+                        
             
         }
         
